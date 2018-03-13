@@ -190,9 +190,7 @@ namespace SeedminerGUI
             else if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "movable_part1.sed" ))
             {
                     //Execute Command with Arguments
-                    
-
-                    //Start the process and export thr console output to the textbox
+                    //Start the process and export the console output to the textbox
                     CreateProcess(dir + "seedminer_launcher.exe", "id0 " + TB_ID0.Text, dir);
                 return;
             }
@@ -208,6 +206,49 @@ namespace SeedminerGUI
 
 
            
+        }
+
+        //Brute Force the Moveable Sed with GPU
+        private void btn_BruteForce_Click(object sender, RoutedEventArgs e)
+        {
+            String exePath = System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName;
+            string dir = System.IO.Path.GetDirectoryName(exePath) + "\\App\\";
+
+            if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "movable_part1.sed"))
+            {
+
+                CreateProcess(dir + "seedminer_launcher.exe", "gpu ", dir);
+            }
+
+            else
+            {
+                tb_outputtext.Clear();
+                tb_outputtext.Text = "You must obtain your Movable_part1.sed adn add your ID0 to it";
+                tb_outputtext.Text = Environment.NewLine + "place it in " + dir.ToString();
+                tb_outputtext.Text = Environment.NewLine + "Or use the Mii Method to create it";
+                return;
+            }
+        }
+
+        private void btn_BruteForceCPU_Click(object sender, RoutedEventArgs e)
+        {
+            String exePath = System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName;
+            string dir = System.IO.Path.GetDirectoryName(exePath) + "\\App\\";
+
+            if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "movable_part1.sed"))
+            {
+
+                CreateProcess(dir + "seedminer_launcher.exe", "cpu ", dir);
+            }
+
+            else
+            {
+                tb_outputtext.Clear();
+                tb_outputtext.Text = "You must obtain your Movable_part1.sed adn add your ID0 to it";
+                tb_outputtext.Text = Environment.NewLine + "place it in " + dir.ToString();
+                tb_outputtext.Text = Environment.NewLine + "Or use the Mii Method to create it";
+                return;
+            }
         }
     }
 }
