@@ -15,8 +15,8 @@
         </Grid.Background>
         <RadioButton x:Name="RB_Mii" GroupName="sel"  IsChecked="False" Content="Mii Brute Force" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="RB_ID0" GroupName="sel" IsChecked="False" Content="Add ID0 to Movable Part 1" HorizontalAlignment="Left" Margin="27,48,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="RB_GPU" GroupName="sel" IsChecked="True" Content="GPU Brute Force" HorizontalAlignment="Left" Margin="27,68,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="RB_CPU" GroupName="sel" Content="CPU Brute Force" HorizontalAlignment="Left" Margin="27,88,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="RB_GPU" GroupName="sel" IsChecked="False" Content="GPU Brute Force" HorizontalAlignment="Left" Margin="27,68,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="RB_CPU" GroupName="sel" IsChecked="true" Content="CPU Brute Force" HorizontalAlignment="Left" Margin="27,88,0,0" VerticalAlignment="Top"/>
         <ScrollBar HorizontalAlignment="Left" Margin="187,-27,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_SelMiiQR" Content="Select Input.bin" HorizontalAlignment="Left" Margin="261,33,0,0" VerticalAlignment="Top" Width="106" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}" Click="btn_SelMiiQR_Click"/>
         <RadioButton x:Name="RB_O3DS" GroupName="Type" Content="Old 3DS" HorizontalAlignment="Left" Margin="261,63,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}"/>
@@ -25,8 +25,8 @@
         <Button x:Name="BTN_MIIBF" Content="Brute Force Part 1" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}" Click="BTN_MIIBF_Click"/>
         <TextBox x:Name="TB_ID0" HorizontalAlignment="Left" Height="23" Margin="266,48,0,0" TextWrapping="Wrap" Text="Enter ID0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_ID0,Path=IsChecked,Converter={StaticResource ID0}}"/>
         <Button x:Name="BTN_ADDID0" Content="Confirm" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_ID0,Path=IsChecked,Converter={StaticResource ID0}}" Click="BTN_ADDID0_Click"/>
-        <Button x:Name="btn_BruteForce" Content="Brute Force" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_GPU,Path=IsChecked,Converter={StaticResource GPU}}" />
-        <Button x:Name="btn_BruteForceCPU" Content="Button" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_CPU,Path=IsChecked,Converter={StaticResource CPU}}" />
+        <Button x:Name="btn_BruteForce" Content="Brute Force GPU" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_GPU,Path=IsChecked,Converter={StaticResource GPU}}" Click="btn_BruteForce_Click" />
+        <Button x:Name="btn_BruteForceCPU" Content="Brute Force CPU" HorizontalAlignment="Left" Margin="261,131,0,0" VerticalAlignment="Top" Width="120" Visibility="{Binding ElementName=RB_CPU,Path=IsChecked,Converter={StaticResource CPU}}" Click="btn_BruteForceCPU_Click" />
         <Label x:Name="LBL_MFGYEAR" Content="MFG Year" HorizontalAlignment="Left" Margin="196,99,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}"/>
         <TextBox x:Name="tb_outputtext" HorizontalAlignment="Left" Height="99" Margin="6,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="502"/>
 
