@@ -147,6 +147,7 @@ def mii_gpu():
 	start_lfcs=endian4(start_lfcs)
 	command="bfcl lfcs %08X %s %s %08X" % (start_lfcs, model_str.encode('hex'), final[4:4+8].encode('hex'), endian4(offset_override))
 	print(command)
+	print("This may take a very long time please wait")
 	os.system(command)
 
 def generate_part2():
@@ -320,6 +321,7 @@ def do_cpu():
 			process_end=address_end
 		start=process_begin
 		size=process_end-process_begin
+		print("This may take a very long time please wait")
 		os.system("start seedMiner.exe %08X %09X" % (start,size))
 		print("Process: "+str(i)+" Start: "+hex(process_begin)+" Size: "+hex(size))
 		
@@ -329,6 +331,7 @@ def do_gpu():
 	keyy=buf[:16].encode('hex')
 	ID0=buf[16:32].encode('hex')
 	command="bfcl msky %s %s %08X" % (keyy,ID0, endian4(offset_override))
+	print("This may take a very long time please wait")
 	print(command)
 	os.system(command)
 

@@ -96,7 +96,7 @@ namespace SeedminerGUI
 
                 //Start the process and export thr console output to the textbox
                // CreateProcess(dir + "seedminer_launcher.exe", "Mii " + DStype + " " + MFGYR, dir);
-                CreateProcess("python","-i seedminer_launcher.py Mii " + DStype + " " + MFGYR, dir);
+                CreateProcess("pythonw","-i seedminer_launcher.py Mii " + DStype + " " + MFGYR, dir);
 
 
             }
@@ -192,7 +192,7 @@ namespace SeedminerGUI
             {
                     //Execute Command with Arguments
                     //Start the process and export the console output to the textbox
-                    CreateProcess("python", "-i seedminer_launcher.py id0 " + TB_ID0.Text, dir);
+                    CreateProcess("pythonw", "-i seedminer_launcher.py id0 " + TB_ID0.Text, dir);
                 return;
             }
             
@@ -218,7 +218,7 @@ namespace SeedminerGUI
             if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "movable_part1.sed"))
             {
 
-                CreateProcess("python", "-i seedminer_launcher.py gpu ", dir);
+                CreateProcess("pythonw", "-i seedminer_launcher.py gpu ", dir);
             }
 
             else
@@ -239,7 +239,7 @@ namespace SeedminerGUI
             if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "movable_part1.sed"))
             {
 
-                CreateProcess("python", "-i seedminer_launcher.py cpu ", dir);
+                CreateProcess("pythonw", "-i seedminer_launcher.py cpu ", dir);
             }
 
             else
@@ -258,7 +258,7 @@ namespace SeedminerGUI
             String exePath = System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName;
             string dir = System.IO.Path.GetDirectoryName(exePath) + "\\App\\";
             tb_outputtext.Clear();
-            CreateProcess("python", "-i seedminer_launcher.py update-db ", dir);
+            CreateProcess("pythonw", "-i seedminer_launcher.py update-db ", dir);
 
         }
     }
