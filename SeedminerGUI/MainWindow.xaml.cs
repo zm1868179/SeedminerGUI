@@ -52,11 +52,11 @@ namespace SeedminerGUI
                 var fileName = openFileDialog.FileName;
                 String exePath = System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName;
                 //If the file exists delete the existing file and copy the newone.
-                if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + System.IO.Path.GetFileName(fileName)))
+                if (System.IO.File.Exists(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "input.bin"))
                 {
-                    System.IO.File.Delete(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + System.IO.Path.GetFileName(fileName));
+                    System.IO.File.Delete(System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "input.bin");
                 }
-                    System.IO.File.Copy(fileName, System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + System.IO.Path.GetFileName(fileName));
+                    System.IO.File.Copy(fileName, System.IO.Path.GetDirectoryName(exePath) + "\\App\\" + "input.bin");
             }
 
         }
@@ -96,6 +96,7 @@ namespace SeedminerGUI
 
                 //Start the process and export thr console output to the textbox
                 CreateProcess(dir + "seedminer_launcher.exe", "Mii " + DStype + " " + MFGYR, dir);
+                //CreateProcess("python", dir +"seedminer_launcher.py Mii " + DStype + " " + MFGYR, dir);
 
 
             }
@@ -115,7 +116,7 @@ namespace SeedminerGUI
             process.StartInfo.FileName = fileName;
             process.StartInfo.Arguments = arguments;
             process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.CreateNoWindow = false;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
@@ -249,6 +250,16 @@ namespace SeedminerGUI
                 tb_outputtext.Text = Environment.NewLine + "Or use the Mii Method to create it";
                 return;
             }
+        }
+
+        //Update DB
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            String exePath = System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName;
+            string dir = System.IO.Path.GetDirectoryName(exePath) + "\\App\\";
+            tb_outputtext.Clear();
+            CreateProcess(dir + "seedminer_launcher.exe", "update-db ", dir);
+
         }
     }
 }
