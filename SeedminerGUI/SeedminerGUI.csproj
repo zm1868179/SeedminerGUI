@@ -148,9 +148,6 @@
     <Content Include="app\seedminer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="app\seedminer_launcher.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="app\seedminer_launcher.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
