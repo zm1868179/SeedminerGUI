@@ -17,7 +17,6 @@
         <RadioButton x:Name="RB_ID0" GroupName="sel" IsChecked="False" Content="Add ID0 to Movable Part 1" HorizontalAlignment="Left" Margin="27,48,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="RB_GPU" GroupName="sel" IsChecked="False" Content="GPU Brute Force" HorizontalAlignment="Left" Margin="27,68,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="RB_CPU" GroupName="sel" IsChecked="False" Content="CPU Brute Force" HorizontalAlignment="Left" Margin="27,88,0,0" VerticalAlignment="Top"/>
-        <ScrollBar HorizontalAlignment="Left" Margin="187,-27,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_SelMiiQR" Content="Select Input.bin" HorizontalAlignment="Left" Margin="261,33,0,0" VerticalAlignment="Top" Width="106" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}" Click="btn_SelMiiQR_Click"/>
         <RadioButton x:Name="RB_O3DS" GroupName="Type" Content="Old 3DS" HorizontalAlignment="Left" Margin="261,63,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}"/>
         <RadioButton x:Name="RB_N3ds" GroupName="Type" Content="New 3DS" HorizontalAlignment="Left" Margin="261,83,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=RB_Mii,Path=IsChecked,Converter={StaticResource Mii}}"/>
